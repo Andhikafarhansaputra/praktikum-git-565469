@@ -14,7 +14,7 @@
         }
 
         body {
-            background-color: #fff0f5; /* pink lembut */
+            background-color: #f3f0fa;
             color: #333;
         }
 
@@ -22,7 +22,7 @@
         header {
             position: sticky;
             top: 0;
-            background: #ff69b4; /* pink utama */
+            background: #7e57c2;
             color: white;
             padding: 15px 50px;
             display: flex;
@@ -45,7 +45,7 @@
 
         nav a.active,
         nav a:hover {
-            color: #ffe4ec; /* pink terang */
+            color: #a5d6a7;
         }
 
         .menu-toggle {
@@ -58,14 +58,10 @@
         #hero {
             text-align: center;
             padding: 80px 20px;
-            background: linear-gradient(rgba(255,105,180,0.7), rgba(255,182,193,0.7)),
+            background: linear-gradient(rgba(126,87,194,0.7), rgba(102,187,106,0.7)),
                         url('https://source.unsplash.com/1600x600/?flowers');
             background-size: cover;
             color: white;
-        }
-
-        #hero h2 {
-            font-size: 40px;
         }
 
         /* PRODUK */
@@ -82,7 +78,7 @@
         }
 
         .produk-item {
-            background: #fff;
+            background: white;
             padding: 20px;
             width: 250px;
             border-radius: 15px;
@@ -100,16 +96,12 @@
         }
 
         .produk-item button {
-            background: #ff69b4;
+            background: #66bb6a;
             color: white;
             border: none;
             padding: 10px;
             border-radius: 20px;
             cursor: pointer;
-        }
-
-        .produk-item button:hover {
-            background: #ff1493;
         }
 
         /* SECTION */
@@ -118,7 +110,7 @@
         }
 
         #testimoni {
-            background: #ffe4ec;
+            background: #e8f5e9;
             padding: 50px;
             text-align: center;
         }
@@ -129,12 +121,11 @@
         }
 
         #cta button {
-            background: #ff69b4;
+            background: #7e57c2;
             color: white;
             padding: 12px 30px;
             border-radius: 25px;
             border: none;
-            cursor: pointer;
         }
 
         #cta button:hover {
@@ -143,8 +134,8 @@
 
         /* FOOTER */
         footer {
-            background: #ff69b4;
-            color: white;
+            background: #2c2c2c;
+            color: #fff;
             padding: 40px 50px 20px;
         }
 
@@ -161,25 +152,26 @@
 
         .footer-section h3 {
             margin-bottom: 15px;
+            color: #a5d6a7;
         }
 
         .footer-section p,
         .footer-section a {
             font-size: 14px;
-            color: #fff;
+            color: #ccc;
             text-decoration: none;
             display: block;
             margin-bottom: 8px;
         }
 
         .footer-section a:hover {
-            text-decoration: underline;
+            color: #fff;
         }
 
         .footer-bottom {
             text-align: center;
             margin-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.5);
+            border-top: 1px solid #555;
             padding-top: 10px;
             font-size: 13px;
         }
@@ -190,7 +182,7 @@
                 position: absolute;
                 top: 70px;
                 right: 0;
-                background: #ff69b4;
+                background: #7e57c2;
                 flex-direction: column;
                 width: 200px;
                 display: none;
@@ -212,7 +204,9 @@
 
 <header>
     <h1>BloomFlower</h1>
+
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
     <nav>
         <ul id="menu">
             <li><a href="#hero" class="nav-link active">Home</a></li>
