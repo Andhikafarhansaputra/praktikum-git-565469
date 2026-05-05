@@ -14,17 +14,20 @@
         }
 
         body {
-            background-color: #f3f0fa; /* ungu sangat soft */
+            background-color: #f3f0fa;
             color: #333;
         }
 
         header {
-            background: #7e57c2; /* ungu */
+            position: sticky;
+            top: 0;
+            background: #7e57c2;
             color: white;
             padding: 15px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 1000;
         }
 
         nav ul {
@@ -37,10 +40,19 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
         }
 
-        nav a:hover {
-            text-decoration: underline;
+        nav a:hover,
+        nav a.active {
+            color: #a5d6a7;
+        }
+
+        /* HAMBURGER */
+        .menu-toggle {
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
         }
 
         #hero {
@@ -52,34 +64,9 @@
             color: white;
         }
 
-        #hero h2 {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        #hero button {
-            margin-top: 20px;
-            padding: 12px 25px;
-            border: none;
-            background: white;
-            color: #7e57c2;
-            font-weight: bold;
-            border-radius: 25px;
-            cursor: pointer;
-        }
-
-        #hero button:hover {
-            background: #e8f5e9; /* hijau soft */
-        }
-
         #produk {
             padding: 50px;
             text-align: center;
-        }
-
-        #produk h2 {
-            margin-bottom: 30px;
-            color: #7e57c2;
         }
 
         .produk-container {
@@ -90,16 +77,11 @@
         }
 
         .produk-item {
-            background: #ffffff;
+            background: white;
             padding: 20px;
             width: 250px;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
-
-        .produk-item:hover {
-            transform: translateY(-5px);
         }
 
         .produk-item img {
@@ -107,12 +89,8 @@
             border-radius: 10px;
         }
 
-        .produk-item h3 {
-            margin: 10px 0;
-        }
-
         .produk-item button {
-            background: #66bb6a; /* hijau */
+            background: #66bb6a;
             color: white;
             border: none;
             padding: 10px;
@@ -120,12 +98,13 @@
             cursor: pointer;
         }
 
-        .produk-item button:hover {
-            background: #4caf50;
+        /* SECTION */
+        section {
+            scroll-margin-top: 80px;
         }
 
         #testimoni {
-            background: #e8f5e9; /* hijau sangat soft */
+            background: #e8f5e9;
             padding: 50px;
             text-align: center;
         }
@@ -136,100 +115,180 @@
             font-style: italic;
         }
 
+        /* CTA */
         #cta {
             text-align: center;
             padding: 50px;
         }
 
-        #cta h2 {
-            color: #7e57c2;
-        }
-
         #cta button {
-            padding: 12px 30px;
-            border: none;
             background: #7e57c2;
             color: white;
+            padding: 12px 30px;
             border-radius: 25px;
-            cursor: pointer;
+            border: none;
         }
 
-        #cta button:hover {
-            background: #5e35b1;
+        footer {
+            background: #2c2c2c;
+            color: #fff;
+            padding: 40px 50px 20px;
         }
 
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-section {
+            max-width: 250px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 15px;
+            color: #a5d6a7;
+        }
+
+        /* FOOTER */
         footer {
             background: #333;
             color: white;
             text-align: center;
-            padding: 15px;
+            margin-top: 20px;
+            border-top: 1px solid #555;
+            padding-top: 10px;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav ul {
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background: #7e57c2;
+                flex-direction: column;
+                width: 200px;
+                display: none;
+                padding: 20px;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav ul {
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background: #7e57c2;
+                flex-direction: column;
+                width: 200px;
+                display: none;
+                padding: 20px;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>BloomFlower</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Produk</a></li>
-                <li><a href="#">Tentang</a></li>
-                <li><a href="#">Kontak</a></li>
-                <li><a href="#">Keranjang</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>BloomFlower</h1>
 
-    <section id="hero">
-        <h2>Bunga Segar untuk Setiap Momen</h2>
-        <p>Kirim kebahagiaan dengan bunga terbaik</p>
-        <button>Beli Sekarang</button>
-    </section>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-    <section id="produk">
-        <h2>Produk Unggulan</h2>
+    <nav>
+        <ul id="menu">
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#produk" class="nav-link">Produk</a></li>
+            <li><a href="#testimoni" class="nav-link">Testimoni</a></li>
+            <li><a href="#cta" class="nav-link">Kontak</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <div class="produk-container">
-            <div class="produk-item">
-                <img src="https://source.unsplash.com/300x200/?rose" alt="">
-                <h3>Buket Mawar</h3>
-                <p>Rp150.000</p>
-                <button>Beli</button>
-            </div>
+<section id="hero">
+    <h2>Bunga Segar untuk Setiap Momen</h2>
+    <p>Kirim kebahagiaan dengan bunga terbaik</p>
+</section>
 
-            <div class="produk-item">
-                <img src="https://source.unsplash.com/300x200/?tulip" alt="">
-                <h3>Buket Tulip</h3>
-                <p>Rp200.000</p>
-                <button>Beli</button>
-            </div>
-
-            <div class="produk-item">
-                <img src="https://source.unsplash.com/300x200/?lily" alt="">
-                <h3>Buket Lily</h3>
-                <p>Rp180.000</p>
-                <button>Beli</button>
-            </div>
+<section id="produk">
+    <h2>Produk Unggulan</h2>
+    <div class="produk-container">
+        <div class="produk-item">
+            <img src="https://source.unsplash.com/300x200/?rose">
+            <h3>Buket Mawar</h3>
+            <p>Rp150.000</p>
+            <button>Beli</button>
         </div>
-    </section>
+        <div class="produk-item">
+            <img src="https://source.unsplash.com/300x200/?tulip">
+            <h3>Buket Tulip</h3>
+            <p>Rp200.000</p>
+            <button>Beli</button>
+        </div>
+    </div>
+</section>
 
-    <section id="testimoni">
-        <h2>Testimoni</h2>
-        <blockquote>"Bunganya segar dan cantik!"</blockquote>
-        <blockquote>"Pengiriman cepat, recommended!"</blockquote>
-    </section>
+<section id="testimoni">
+    <h2>Testimoni</h2>
+    <p>"Bunganya segar dan cantik!"</p>
+</section>
 
-    <section id="cta">
-        <h2>Pesan Sekarang</h2>
-        <p>Buat hari spesial lebih bermakna</p>
-        <button>Pesan</button>
-    </section>
+<section id="cta">
+    <h2>Pesan Sekarang</h2>
+    <button>Pesan</button>
+</section>
 
-    <footer>
-        <p>&copy; 2026 BloomFlower</p>
-    </footer>
+<footer>
+    <p>&copy; 2026 BloomFlower</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("menu").classList.toggle("show");
+    }
+
+    // Active menu saat scroll
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active");
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
