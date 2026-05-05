@@ -4,77 +4,223 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BloomFlower - Toko Bunga Online</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background: #ff6f91;
+            color: white;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* HERO */
+        #hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(rgba(255,111,145,0.7), rgba(255,111,145,0.7)), url('https://source.unsplash.com/1600x600/?flowers');
+            background-size: cover;
+            color: white;
+        }
+
+        #hero h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        #hero button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            border: none;
+            background: white;
+            color: #ff6f91;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        #hero button:hover {
+            background: #ffe3ea;
+        }
+
+        /* PRODUK */
+        #produk {
+            padding: 50px;
+            text-align: center;
+        }
+
+        #produk h2 {
+            margin-bottom: 30px;
+        }
+
+        .produk-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .produk-item {
+            background: white;
+            padding: 20px;
+            width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .produk-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .produk-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .produk-item h3 {
+            margin: 10px 0;
+        }
+
+        .produk-item button {
+            background: #ff6f91;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        /* TESTIMONI */
+        #testimoni {
+            background: #fff0f5;
+            padding: 50px;
+            text-align: center;
+        }
+
+        blockquote {
+            margin: 15px auto;
+            max-width: 500px;
+            font-style: italic;
+        }
+
+        /* CTA */
+        #cta {
+            text-align: center;
+            padding: 50px;
+        }
+
+        #cta button {
+            padding: 12px 30px;
+            border: none;
+            background: #ff6f91;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
 </head>
+
 <body>
 
-    <!-- HEADER -->
     <header>
         <h1>BloomFlower</h1>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Produk</a></li>
-                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="#">Tentang</a></li>
                 <li><a href="#">Kontak</a></li>
                 <li><a href="#">Keranjang</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- HERO / BANNER -->
     <section id="hero">
         <h2>Bunga Segar untuk Setiap Momen</h2>
-        <p>Kirim kebahagiaan dengan bunga pilihan terbaik</p>
+        <p>Kirim kebahagiaan dengan bunga terbaik</p>
         <button>Beli Sekarang</button>
     </section>
 
-    <!-- PRODUK UNGGULAN -->
     <section id="produk">
         <h2>Produk Unggulan</h2>
 
-        <div class="produk-item">
-            <img src="bunga1.jpg" alt="Buket Mawar">
-            <h3>Buket Mawar</h3>
-            <p>Rp150.000</p>
-            <button>Beli</button>
-        </div>
+        <div class="produk-container">
+            <div class="produk-item">
+                <img src="https://source.unsplash.com/300x200/?rose" alt="">
+                <h3>Buket Mawar</h3>
+                <p>Rp150.000</p>
+                <button>Beli</button>
+            </div>
 
-        <div class="produk-item">
-            <img src="bunga2.jpg" alt="Buket Tulip">
-            <h3>Buket Tulip</h3>
-            <p>Rp200.000</p>
-            <button>Beli</button>
-        </div>
+            <div class="produk-item">
+                <img src="https://source.unsplash.com/300x200/?tulip" alt="">
+                <h3>Buket Tulip</h3>
+                <p>Rp200.000</p>
+                <button>Beli</button>
+            </div>
 
-        <div class="produk-item">
-            <img src="bunga3.jpg" alt="Buket Lily">
-            <h3>Buket Lily</h3>
-            <p>Rp180.000</p>
-            <button>Beli</button>
+            <div class="produk-item">
+                <img src="https://source.unsplash.com/300x200/?lily" alt="">
+                <h3>Buket Lily</h3>
+                <p>Rp180.000</p>
+                <button>Beli</button>
+            </div>
         </div>
     </section>
 
-    <!-- TESTIMONI -->
     <section id="testimoni">
-        <h2>Apa Kata Pelanggan</h2>
-        <blockquote>
-            "Bunganya segar dan pengiriman cepat!" - Andi
-        </blockquote>
-        <blockquote>
-            "Pelayanan sangat memuaskan!" - Sari
-        </blockquote>
+        <h2>Testimoni</h2>
+        <blockquote>"Bunganya segar dan cantik!"</blockquote>
+        <blockquote>"Pengiriman cepat, recommended!"</blockquote>
     </section>
 
-    <!-- CTA -->
     <section id="cta">
         <h2>Pesan Sekarang</h2>
-        <p>Buat momen spesial jadi lebih indah dengan bunga dari kami</p>
-        <button>Pesan Sekarang</button>
+        <p>Buat hari spesial lebih bermakna</p>
+        <button>Pesan</button>
     </section>
 
-    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 BloomFlower. All Rights Reserved.</p>
+        <p>&copy; 2026 BloomFlower</p>
     </footer>
 
 </body>
