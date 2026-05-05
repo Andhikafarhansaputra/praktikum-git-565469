@@ -41,13 +41,15 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
         }
 
-        nav a.active,
-        nav a:hover {
+        nav a:hover,
+        nav a.active {
             color: #a5d6a7;
         }
 
+        /* HAMBURGER */
         .menu-toggle {
             display: none;
             font-size: 25px;
@@ -123,7 +125,6 @@
             border: none;
         }
 
-        /* FOOTER */
         footer {
             background: #2c2c2c;
             color: #fff;
@@ -165,6 +166,28 @@
             border-top: 1px solid #555;
             padding-top: 10px;
             font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav ul {
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background: #7e57c2;
+                flex-direction: column;
+                width: 200px;
+                display: none;
+                padding: 20px;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
         }
 
         /* RESPONSIVE */
@@ -242,59 +265,35 @@
 </section>
 
 <footer>
-    <div class="footer-container">
-
-        <div class="footer-section">
-            <h3>BloomFlower</h3>
-            <p>Toko bunga online dengan bunga segar terbaik.</p>
-        </div>
-
-        <div class="footer-section">
-            <h3>Menu</h3>
-            <a href="#hero">Home</a>
-            <a href="#produk">Produk</a>
-            <a href="#testimoni">Testimoni</a>
-            <a href="#cta">Kontak</a>
-        </div>
-
-        <div class="footer-section">
-            <h3>Kontak</h3>
-            <p>Email: bloomflower@gmail.com</p>
-            <p>Telp: 08123456789</p>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        <p>&copy; 2026 BloomFlower</p>
-    </div>
+    <p>&copy; 2026 BloomFlower</p>
 </footer>
 
 <script>
-function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show");
-}
+    function toggleMenu() {
+        document.getElementById("menu").classList.toggle("show");
+    }
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-link");
+    // Active menu saat scroll
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
 
-window.addEventListener("scroll", () => {
-    let current = "";
+    window.addEventListener("scroll", () => {
+        let current = "";
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
-            current = section.getAttribute("id");
-        }
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active");
+            }
+        });
     });
-
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
-    });
-});
 </script>
 
 </body>
