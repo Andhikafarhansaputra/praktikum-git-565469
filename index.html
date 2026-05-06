@@ -16,6 +16,7 @@
         body {
             background-color: #fff0f5;
             color: #333;
+            line-height: 1.6;
         }
 
         /* HEADER */
@@ -35,6 +36,10 @@
             display: flex;
             list-style: none;
             gap: 20px;
+        }
+
+        nav ul li {
+            margin: 0 5px;
         }
 
         nav a {
@@ -66,14 +71,24 @@
 
         #hero h2 {
             font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        #hero p {
+            margin-top: 10px;
+        }
+
+        section {
+            padding: 50px;
+            scroll-margin-top: 80px;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 25px;
         }
 
         /* PRODUK */
-        #produk {
-            padding: 50px;
-            text-align: center;
-        }
-
         .produk-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -86,6 +101,7 @@
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             transition: 0.3s;
+            line-height: 1.5;
         }
 
         .produk-item:hover {
@@ -95,6 +111,15 @@
         .produk-item img {
             width: 100%;
             border-radius: 10px;
+        }
+
+        .produk-item h3 {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .produk-item p {
+            margin-bottom: 15px;
         }
 
         .produk-item button {
@@ -110,28 +135,40 @@
             background: #ff1493;
         }
 
-        section {
-            scroll-margin-top: 80px;
-        }
-
         #testimoni {
             background: #ffe4ec;
-            padding: 50px;
             text-align: center;
         }
 
+        #testimoni h2 {
+            margin-bottom: 20px;
+        }
+
+        #testimoni p {
+            margin-top: 10px;
+        }
+
+        /* CTA */
         #cta {
             text-align: center;
-            padding: 50px;
+        }
+
+        #cta h2 {
+            margin-bottom: 20px;
         }
 
         #cta button {
+            margin-top: 10px;
             background: #ff69b4;
             color: white;
             padding: 12px 30px;
             border-radius: 25px;
             border: none;
             cursor: pointer;
+        }
+
+        #cta button:hover {
+            background: #ff1493;
         }
 
         /* FOOTER */
@@ -162,7 +199,8 @@
             color: #fff;
             text-decoration: none;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            line-height: 1.6;
         }
 
         .footer-section a:hover {
